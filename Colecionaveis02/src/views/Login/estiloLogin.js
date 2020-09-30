@@ -1,36 +1,58 @@
 import { StyleSheet } from 'react-native';
 
 const estiloLogin = StyleSheet.create({
-   container: {   
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',     
+
+    fundo:{
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+    },
+
+    logoContainer: {
+        alignItems: 'center',
+        marginBottom: 20,
+   
+    },
+
+    Logo: {
+        width: 90,
+        height: 90,
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+
+    container: {   
+      flex: 1,  
    },
-   borda: {   
+
+    borda: {   
       backgroundColor: '#081a31',  
-      width: '80%',
-      height: 230,
-      borderRadius: 10,
+      width: '100%',
+      height: '100%',
+      justifyContent: 'center'
    },
-   texto: {
+
+    texto: {
       fontSize: 20,
       color: '#FFFFFF',
       fontWeight: 'bold',
       textAlign: "center",
       padding: 10
    },
-   campo: {
-      backgroundColor: '#dcedff',
+
+    campo: {
       fontSize: 18,
-      marginLeft: 40,
-      marginRight: 40,    
-      marginTop: 5,
-      borderRadius: 5,
-      height: 40,
-      paddingLeft: 10
+      color: '#FFFFFF',
+      marginLeft: 15,
+      paddingBottom: 10,
+      borderBottomWidth: 1,
+      borderColor: "#FFFFFF",
     },
-   botaoContainer: {
-      marginTop: 20,
+
+    botaoContainer: {
+      marginTop: 30,
       marginBottom: 20,
       marginLeft: 40,
       marginRight: 40,
@@ -42,11 +64,42 @@ const estiloLogin = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
    },
-      botaoTexto: {
+
+    botaoTexto: {
       fontSize: 18,
       color: '#FFFFFF',
-      fontWeight: 'bold'
+      paddingLeft: 15,
+      backgroundColor: 'transparent',
    },
+
+    icon: {
+      alignItems: 'center',
+      marginBottom: 30,
+      },
+
+    CampoContainer: {
+          flexDirection: 'row',
+          paddingLeft: 50,
+          marginTop: 10,
+          paddingRight: 50,
+          margim: 10,
+          borderRadius: 5,
+          alignItems: 'center',
+      },
+    
+    botaoLinearGradient: {
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 20,
+          marginTop: 100,
+          marginLeft: 50,
+          marginRight: 50,
+          height: 50,
+          paddingLeft: 15,
+          paddingRight: 15,
+          borderRadius: 6,
+    }
 });
 
   export default estiloLogin;

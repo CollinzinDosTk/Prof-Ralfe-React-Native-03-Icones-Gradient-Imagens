@@ -7,7 +7,7 @@ const estiloItem = StyleSheet.create({
       alignItems: 'center',     
    },
    borda: {   
-      backgroundColor: '#081a31',  
+      backgroundColor: '#000000',  
       width: '80%',
       height: '25%',
       borderRadius: 10,
@@ -28,13 +28,13 @@ const estiloItem = StyleSheet.create({
       height: 40,
       borderWidth: 2,
       borderColor: '#e8f2e9',
-      backgroundColor: '#14417b',
+      backgroundColor: '#ffffff',
       justifyContent: 'center',
       alignItems: 'center',
    },
    botaoTexto: {
       fontSize: 18,
-      color: '#FFFFFF',
+      color: '#000000',
       fontWeight: 'bold'
    },
 });

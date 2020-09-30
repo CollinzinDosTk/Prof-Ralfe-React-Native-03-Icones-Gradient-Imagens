@@ -1,34 +1,49 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import estiloInicial from './estiloInicial';
+import { AntDesign } from '@expo/vector-icons'
+import {useIsDrawerOpen} from '@react-navigation/drawer'
 
 function Inicial({ navigation }) {
 
+    const isDrawerOpen = useIsDrawerOpen();
+
+    const exibirDrawer = () => {
+        if (!isDrawerOpen){
+            navigation.openDrawer();
+        }
+    }
     const abrirColecao = () => {
         navigation.navigate('Colecao')
-    }
-    
+    }             
     const abrirItem = () => {
         navigation.navigate('Item')
     }
-    
     return (
         <View style={estiloInicial.container}>
-            <View style={estiloInicial.borda}>
 
-                <Text style={estiloInicial.texto}>Inicial</Text>
-
-                <TouchableOpacity style={estiloInicial.botaoContainer} onPress={abrirColecao}>
-                    <Text style={estiloInicial.botaoTexto}>Coleção</Text>
+            <View style={estiloInicial.header}>
+                <TouchableOpacity onPress={exibirDrawer}>
+                    <AntDesign name="menu-fold" size={30} color="white" />
                 </TouchableOpacity>
-
-                <TouchableOpacity style={estiloInicial.botaoContainer} onPress={abrirItem}>
-                    <Text style={estiloInicial.botaoTexto}>Item</Text>
-                </TouchableOpacity>
-
             </View>
+            
+                <ImageBackground source={require('../../../assets/imagens/grandm.png')} style={estiloInicial.fundo}>
+
+                <TouchableOpacity onPress={abrirColecao}>
+                    <ImageBackground source={require('../../../assets/imagens/ronaldinho.jpg')} style={estiloInicial.botaoBackground}>
+                        <Text style={estiloInicial.botaoTexto}>Coleção</Text>
+                    </ImageBackground>   
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={abrirItem}>
+                    <ImageBackground source={require('../../../assets/imagens/dudu.jpg')} style={estiloInicial.botaoBackground}> 
+                        <Text style={estiloInicial.botaoTexto}>Item</Text>
+                    </ImageBackground>   
+                </TouchableOpacity>
+
+                </ImageBackground>
         </View>
     )
 }
-
 export default Inicial;

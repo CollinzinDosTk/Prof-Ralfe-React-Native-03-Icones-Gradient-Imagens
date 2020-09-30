@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert, ImageBackground } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import estiloLogin from './estiloLogin';
+import { SimpleLineIcons } from '@expo/vector-icons';
+
 
 function Login({ navigation }) {
 
@@ -24,16 +30,30 @@ function Login({ navigation }) {
     
     return (
         <View style={estiloLogin.container}>
-            <View style={estiloLogin.borda}>
 
-                <Text style={estiloLogin.texto}>Login</Text>
+            <ImageBackground source={require('../../../assets/imagens/grandm2.jpg')}
+            style={estiloLogin.fundo}>
+
+                <View style={estiloLogin.logoContainer}>
+                    <LinearGradient colors={['#4F9D69', '#8DFFCD', '#BEE6CE']} style={estiloLogin.Logo}>
+                    <SimpleLineIcons name="login" size={24} color="black" />
+                    </LinearGradient>
+                </View>
+
+                <View style={estiloLogin.CampoContainer}>
+                <MaterialIcons name="person" size={24} color="white" />
 
                 <TextInput
                     style={estiloLogin.campo}
                     placeholder="Login"
                     onChangeText={login => setLogin(login)}
-                    value={login}
+                    value={login}  
                 />
+                </View>  
+
+                <View style={estiloLogin.CampoContainer}>
+                
+                <MaterialIcons name="vpn-key" size={24} color="white" />
 
                 <TextInput
                     style={estiloLogin.campo}
@@ -42,11 +62,18 @@ function Login({ navigation }) {
                     value={senha}
                 />
 
-                <TouchableOpacity style={estiloLogin.botaoContainer} onPress={entrar}>
-                    <Text style={estiloLogin.botaoTexto}>Entrar</Text>
+                </View>
+
+                <TouchableOpacity onPress={entrar}>
+                    <LinearGradient colors={['#4F9D69', '#8DFFCD', '#BEE6CE']} style={estiloLogin.botaoLinearGradient}>
+                        <MaterialCommunityIcons name="cursor-default-click-outline" size={24} color="white" />
+                        <Text style={estiloLogin.botaoTexto}>
+                            Entrar
+                        </Text>
+                    </LinearGradient>
                 </TouchableOpacity>
 
-            </View>
+            </ImageBackground>
         </View>
     )
 }

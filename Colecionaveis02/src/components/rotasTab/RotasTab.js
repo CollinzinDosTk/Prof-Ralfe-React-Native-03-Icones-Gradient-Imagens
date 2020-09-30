@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Perfil from '../../views/Perfil/Perfil';
 import Colecao from '../../views/Colecao/Colecao';
 import RotasDrawer from '../rotasDrawer/RotasDrawer';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,15 +12,47 @@ const RotasTab = () => {
     <Tab.Navigator 
       tabBarOptions={
       {
-        labelStyle: { fontSize: 24 },
-        style: {backgroundColor: '#14417b'},
+        showLabel: false,
+        style: {backgroundColor: '#000000'},
         activeTintColor: '#FFFFFF' 
       }
       }
     >
-      <Tab.Screen name="Inicial" component={RotasDrawer} />
-      <Tab.Screen name="Colecao" component={Colecao} />
-      <Tab.Screen name="Perfil" component={Perfil} />
+      
+      <Tab.Screen name="Inicial"
+      component={RotasDrawer}
+      options = {{
+        unmountOnBlur: true,
+        tabBarIcon: ({color}) => (
+            <MaterialIcons name ='home' size={24} color={color}/>
+        ),
+      }}
+      >
+
+      </Tab.Screen>
+
+      <Tab.Screen name="Colecao"
+      component={Colecao}
+      options = {{
+        tabBarIcon: ({color}) => (
+            <MaterialIcons name ='storage' size={24} color={color}/>
+        ),
+      }}
+      >
+       
+      </Tab.Screen>
+
+      <Tab.Screen name="Perfil"
+      component={Perfil}
+      options = {{
+        tabBarIcon: ({color}) => (
+            <MaterialIcons name ='person' size={24} color={color}/>
+        ),
+      }}
+      >
+       
+      </Tab.Screen>
+      
     </Tab.Navigator>
   );
 }
